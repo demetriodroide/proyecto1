@@ -5,7 +5,7 @@ import Finder from "./finder/finder"
 
 
 
-class App extends Component() {
+class App extends Component {
   // let myCompany = "Grupo ACME, S.A.";
   constructor(props) {
     super(props);
@@ -13,6 +13,8 @@ class App extends Component() {
   }
 
   miBuscador = (event) => {
+    console.log(this.state.username);
+    
     this.setState({username: event.target.value});
   }
 
@@ -21,7 +23,7 @@ render(){
   return (
     <div className="App">
       
-      <Finder />
+      <Finder ph="hola" mb={this.miBuscador} />
       
       <main>
         <h1>Hola mundo</h1>

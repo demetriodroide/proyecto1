@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 import './finder.css';
 
-class finder extends Component {
-
+class Finder extends Component {
   constructor(props) {
     super(props);
-    this.state = { username: '' };
-    
+    //this.state = { username: '' };
   }
 
   render() {
+
     return (
         <div>
       esto es finder y 
       <input
         type='text'
-        onChange={this.props.miBuscador}
+        placeholder={this.props.ph}
+        onChange={this.props.mb}
       />
 
 
@@ -25,4 +25,4 @@ class finder extends Component {
   }
 }
 
-export default finder;
+export default Finder;
