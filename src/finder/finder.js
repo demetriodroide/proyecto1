@@ -10,8 +10,8 @@ class Finder extends Component {
   render() {
 
     return (
-        <div>
-      esto es finder y 
+        <div> {this.props.ph}
+      esto es finder y {/* tengo q buscar las tareas */}
       <input
         type='text'
         placeholder={this.props.ph}
