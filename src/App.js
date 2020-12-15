@@ -11,19 +11,34 @@ class App extends Component {
     
     this.state = {
       buscando: '',
+      //
       tasks : ["comprar pan", "dividir pan","vender pan" ]
     };
   }
 
+  // esto es igual a un onChange
   miBuscador = (event) => {
     //console.log(this.state.username);
     this.setState({buscando: event.target.value});
   }
 
-  pintarTareas = () => {
-    return /* tantos <Task ... > como tareas hay en mi state*/
-    <Task taskText={this.state.tasks[1]} />
-  }
+indexador = (event) => {
+
+}
+
+comparador = () => { indexof event
+if this.state.buscando == this.as(valor)
+when pintarTareas()
+
+}
+}
+
+pintarTareas = () => {
+  return this.state.tasks.map((valor) => {
+    return <Task taskText={valor} />
+  }) /* tantos <Task ... > como tareas hay en mi state*/
+
+}
 
 render(){
 

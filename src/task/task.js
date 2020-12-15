@@ -11,7 +11,7 @@ class Task extends Component {
     return (
       
         <div>
-          esto es task y
+          esto es task y voy a : 
           <h2> {this.props.taskText} </h2>
         </div>
       
