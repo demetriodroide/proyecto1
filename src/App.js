@@ -21,17 +21,21 @@ class App extends Component {
     //console.log(this.state.username);
     this.setState({buscando: event.target.value});
   }
-
+  
+/*
 indexador = (event) => {
 
 }
+*/
 
+/*
 comparador = () => { indexof event
 if this.state.buscando == this.as(valor)
 when pintarTareas()
 
 }
-}
+*/
+
 
 pintarTareas = () => {
   return this.state.tasks.map((valor) => {
@@ -41,7 +45,6 @@ pintarTareas = () => {
 }
 
 render(){
-
   return (
     <div className="App">
       
