@@ -19,30 +19,32 @@ class App extends Component {
   // esto es igual a un onChange
   miBuscador = (event) => {
     //console.log(this.state.username);
-    this.setState({buscando: event.target.value});
+    let buscando = event.target.value;
+    
+    console.log(this.state.tasks.indexOf(buscando),
+    this.state.tasks.filter((el) => { return el.toLowerCase().includes(buscando.toLowerCase())}))
+  
+
+   this.state.tasks.filter((el) => { return el.toLowerCase().includes(buscando.toLowerCase())})
+  
+      this.setState({buscando: buscando});
   }
   
+  pintarTareas = () => {
+    return this.state.tasks.map((valor) => {
+      return <Task taskText={valor} />
+    }) 
+  
+  }
+
 /*
-indexador = (event) => {
-
-}
-*/
-
-/*
-comparador = () => { indexof event
-if this.state.buscando == this.as(valor)
-when pintarTareas()
-
-}
-*/
-
-
 pintarTareas = () => {
   return this.state.tasks.map((valor) => {
     return <Task taskText={valor} />
-  }) /* tantos <Task ... > como tareas hay en mi state*/
+  }) 
 
 }
+*/
 
 render(){
   return (
