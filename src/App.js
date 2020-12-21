@@ -18,39 +18,24 @@ class App extends Component {
 
   // esto es igual a un onChange
   miBuscador = (event) => {
-    //console.log(this.state.username);
-    let buscando = event.target.value;
-    
-    console.log(this.state.tasks.indexOf(buscando),
-    this.state.tasks.filter((el) => { return el.toLowerCase().includes(buscando.toLowerCase())}))
-  
-
-   this.state.tasks.filter((el) => { return el.toLowerCase().includes(buscando.toLowerCase())})
-  
-      this.setState({buscando: buscando});
+    this.setState({ buscando: event.target.value });
   }
   
   pintarTareas = () => {
-    return this.state.tasks.map((valor) => {
-      return <Task taskText={valor} />
-    }) 
-  
+    return this.state.tasks
+            .filter((el) => {
+              return el.toLowerCase().includes(this.state.buscando.toLowerCase())
+            })
+            .map((valor) => {
+              return <Task taskText={valor} />
+            });
   }
-
-/*
-pintarTareas = () => {
-  return this.state.tasks.map((valor) => {
-    return <Task taskText={valor} />
-  }) 
-
-}
-*/
 
 render(){
   return (
     <div className="App">
       
-      <Finder ph="hola" mb={this.miBuscador} />
+      <Finder mb={this.miBuscador} />
       
       <main>
         <h1>Hola mundo <div>{/*console.log(tareas.tasks[1])*/}</div> </h1>
