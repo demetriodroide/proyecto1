@@ -26,10 +26,19 @@ class App extends Component {
             .filter((el) => {
               return el.toLowerCase().includes(this.state.buscando.toLowerCase())
             })
-            .map((valor) => {
-              return <Task taskText={valor} />
+            .map((valor, indice) => {
+              return <Task taskText={valor} taskid={indice} eliminarid={this.eliminar} />
             });
   }
+
+eliminar = (indice) => {
+   /* funcion elimina un dato del array , tienes dato + */
+  console.log("Estoy eliminando la tarea " + indice);
+  // this.setState(this.state.tasks.splice(indice,0))
+  let newTasks = [...this.state.tasks];
+  console.log(newTasks.splice(indice,1));
+  this.setState({tasks: newTasks});
+}
 
 render(){
   return (
@@ -41,7 +50,7 @@ render(){
         <h1>Hola mundo <div>{/*console.log(tareas.tasks[1])*/}</div> </h1>
       </main>
 
-      {this.pintarTareas()}
+      {this.pintarTareas()} 
        
     </div>
   );
