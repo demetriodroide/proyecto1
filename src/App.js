@@ -35,7 +35,7 @@ eliminar = (indice) => {
    /* funcion elimina un dato del array , tienes dato + */
   console.log("Estoy eliminando la tarea " + indice);
   // this.setState(this.state.tasks.splice(indice,0))
-  let newTasks = [...this.state.tasks];
+  let newTasks = [...this.state.tasks]; // hace una copia del estado 
   console.log(newTasks.splice(indice,1));
   this.setState({tasks: newTasks});
 }
